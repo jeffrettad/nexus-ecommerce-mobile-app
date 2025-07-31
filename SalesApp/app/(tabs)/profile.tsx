@@ -7,9 +7,9 @@ type Props = {};
 const ProfileScreen = (props: Props) => {
   // Placeholder user data
   const user = {
-    name: "Tonia Elohor",
-    email: "toniaelohor@alx.com",
-    profilePicture: "https://img.freepik.com/free-photo/surprised-playful-touched-good-looking-african-american-woman-glasses-stylish-brown-t-shirt-clasping-hands-smiling-from-joy-excitement-liking-great-show_176420-23322.jpg?ga=GA1.1.1971339279.1738157674&semt=ais_hybrid",
+    name: "Adedokun Adesoye ",
+    email: "adedokunadesoye3040@gmail.com",
+    profilePicture: "https://photos.app.goo.gl/3DA1o7zXF3PSQpco7",
   };
 
   return (
