@@ -3,7 +3,7 @@ import React from "react";
 import { Link, Stack } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { Colors } from "@/constants/Colors";
-import Animated, { FadeIn, FadeInLeft, FadeInUp } from "react-native-reanimated";
+import Animated, { FadeIn, FadeInLeft, FadeInRight, FadeInUp } from "react-native-reanimated";
 import SocialBtn from '@/components/SocialBtn';
 
 type Props = {};
@@ -12,15 +12,15 @@ const WelcomeScreen = (props: Props) => {
   return (
     <>
     <Stack.Screen options={{headerShown: false}}/>
-    <ImageBackground source={require('@/assets/images/welcome.jpg')}
+    <ImageBackground source={require('@/assets/images/ecommerce-splash.jpg')}
     style={{flex: 1}} resizeMode="cover">
     
     <View style={styles.container}>
     <LinearGradient colors={["transparent", 'rgba(255, 255, 255, 0.9)', 'rgba(255, 255, 255, 1)']} style={styles.background}>
     <View style={styles.wrapper}> 
-      <Animated.Text style={styles.title} entering={FadeInLeft.delay(500).duration(300)}>SwiftCart</Animated.Text>
+      <Animated.Text style={styles.title} entering={FadeInRight.delay(500).duration(300)}>ShopDex</Animated.Text>
       
-      <Animated.Text style={styles.description} entering={FadeInLeft.delay(500).duration(300)}>Best place to buy high-quality items.</Animated.Text>
+      <Animated.Text style={styles.description} entering={FadeInLeft.delay(500).duration(300)}> We sell high-quality items.</Animated.Text>
 
 <SocialBtn  emailHref={"/signup"}/>
 
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 22,
+    fontSize: 23,
     color: Colors.primary,
     fontWeight: '700',
     letterSpacing: 2.4,

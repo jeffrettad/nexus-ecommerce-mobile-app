@@ -1,17 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Colors } from '@/constants/Colors'; 
-
+import adex from '@/assets/images/adex.jpg';
 type Props = {};
 
 const ProfileScreen = (props: Props) => {
   // Placeholder user data
   const user = {
     name: "Adedokun Adesoye ",
-    email: "adedokunadesoye3040@gmail.com",
-    profilePicture: "https://photos.app.goo.gl/3DA1o7zXF3PSQpco7",
+    email: "adedokunadesoye@gmail.com",
+    profilePicture: <a href ='@/assets/images/adexg.png'></a>
   };
-
   return (
     <View style={styles.container}>
       {/* Profile Picture */}

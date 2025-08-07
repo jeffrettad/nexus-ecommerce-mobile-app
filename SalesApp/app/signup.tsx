@@ -4,6 +4,7 @@ import { Link, router, Stack } from 'expo-router';
 import FieldInput from '@/components/FieldInput';
 import SocialBtn from '@/components/SocialBtn';
 import { Colors } from '@/constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -13,8 +14,7 @@ const SignUpScreen = (props: Props) => {
   return (
     <>
     <Stack.Screen options={{headerTitle: 'Sign Up'}} />
-    <View style={styles.container}>
-      <Text style={styles.title}>Create Account</Text>
+
  <FieldInput placeholder='Email Address' 
                placeholderTextColor={Colors.gray} 
                autoCapitalize='none'
@@ -43,8 +43,7 @@ const SignUpScreen = (props: Props) => {
 <View style={styles.divider} />
 
 <SocialBtn emailHref={'/signin'}/>
-    </View>
-    
+ 
     </>
   );
 };
