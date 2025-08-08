@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_2VJrkrpPeE5M1YT7AO6uicKabp9p",
+  "orgId": "team_UJOKzQWNaxvvlBDdd6YCxLCZ",
+  "projectName": "sales-app",
+  "settings": {
+    "createdAt": 1754650663221,
+    "framework": null,
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "22.x"
+  }
+}

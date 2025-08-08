@@ -5,7 +5,7 @@ node_modules/
 
 # Expo
 .expo/
-dist/
+#dist
 web-build/
 expo-env.d.ts
 
@@ -25,7 +25,7 @@ expo-env.d.ts
 npm-debug.*
 yarn-debug.*
 yarn-error.*
-
+#dist
 # macOS
 .DS_Store
 *.pem
@@ -36,6 +36,4 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-app-example
 
-.vercel
