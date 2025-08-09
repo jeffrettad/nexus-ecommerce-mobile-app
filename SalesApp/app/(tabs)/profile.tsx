@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { Colors } from '@/constants/Colors'; 
-import adex from '@/assets/images/adex.jpg';
+import { Colors } from '@/constants/Colors';
 type Props = {};
 
 const ProfileScreen = (props: Props) => {
@@ -9,7 +8,7 @@ const ProfileScreen = (props: Props) => {
   const user = {
     name: "Adedokun Adesoye ",
     email: "adedokunadesoye@gmail.com",
-    profilePicture: <a href ='@/assets/images/adexg.png'></a>
+    profilePicture: " https://imgur.com/a/VR3rljB",
   };
   return (
     <View style={styles.container}>

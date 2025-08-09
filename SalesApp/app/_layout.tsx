@@ -2,8 +2,8 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { Provider } from 'react-redux'; // Import Redux Provider
-import { store } from '@/redux/store'; // Import Redux store
+import { Provider } from 'react-redux';
+import { store } from '@/redux/store';
 import 'react-native-reanimated';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -25,10 +25,9 @@ export default function RootLayout() {
   }
 
   return (
-    // Wrap everything in the Redux Provider
     <Provider store={store}>
-      <Stack>
-        {/* Screens for navigating */}
+      <Stack initialRouteName="index">
+        <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="signin" options={{ presentation: 'modal' }} />
         <Stack.Screen name="signup" options={{ presentation: 'modal' }} />
