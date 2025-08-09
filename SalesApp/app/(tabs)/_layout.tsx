@@ -1,41 +1,38 @@
-import React from 'react';
-import { Tabs } from "expo-router";
-import { Ionicons } from '@expo/vector-icons';
+import { useFonts } from 'expo-font';
+import { Stack } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
+import { useEffect } from 'react';
+import { Provider } from 'react-redux'; // Import Redux Provider
+import { store } from '@/redux/store'; // Import Redux store
+import 'react-native-reanimated';
 
-export default function TabLayout() {
+// Prevent the splash screen from auto-hiding before asset loading is complete.
+SplashScreen.preventAutoHideAsync();
+
+export default function RootLayout() {
+  const [loaded] = useFonts({
+    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+  });
+
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <Tabs screenOptions={{headerShown: false}}>
-      <Tabs.Screen name='index' options={{
-        title: 'Home',
-        tabBarIcon: ({color}) => (
-          <Ionicons name='home-outline' size={22} color={color} />
-        )
-      }} />
-      <Tabs.Screen name='explore' options={{
-        title: 'Explore',
-        tabBarIcon: ({color}) => (
-          <Ionicons name='search-outline' size={22} color={color} />
-        )
-      }} />
-      <Tabs.Screen name='notifications' options={{
-        title: 'Notification',
-        tabBarIcon: ({color}) => (
-          <Ionicons name='notifications-outline' size={22} color={color} />
-        )
-      }} />
-      <Tabs.Screen name='cart' options={{
-        title: 'Cart',
-        tabBarBadge: 3,
-        tabBarIcon: ({color}) => (
-          <Ionicons name='cart-outline' size={22} color={color} />
-        )
-      }} />
-      <Tabs.Screen name='profile' options={{
-        title: 'Profile',
-        tabBarIcon: ({color}) => (
-          <Ionicons name='person-outline' size={22} color={color} />
-        )
-      }} />
-    </Tabs>
+    // Wrap everything in the Redux Provider
+    <Provider store={store}>
+      <Stack>
+        {/* Screens for navigating */}
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="signin" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="signup" options={{ presentation: 'modal' }} />
+      </Stack>
+    </Provider>
   );
 }
